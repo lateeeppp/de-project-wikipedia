@@ -1,0 +1,23 @@
+[project]
+name = "wikitrends"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "lateeeppp", email = "ikhsannudin.dev@gmail.com" }
+]
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "google-cloud-storage>=3.13.1",
+    "python-dotenv>=1.2.3",
+    "requests>=2.34.2",
+    "tenacity>=9.1.4",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "responses>=0.26.3",
+    "ruff>=0.16.6",
+]
+
