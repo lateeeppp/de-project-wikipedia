@@ -8,7 +8,7 @@ Artikel apa yang sedang melonjak tidak wajar di Wikipedia Indonesia hari ini dib
 
 ## Arsitektur
 
-![Data Pipeline](./data/pipeline-wikipedia.png)
+![Data Pipeline](./img/pipeline-wikipedia.png)
 
 ## Nilai Bisnis
 
