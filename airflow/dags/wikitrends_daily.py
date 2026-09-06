@@ -9,6 +9,8 @@ from airflow.providers.google.cloud.transfers.gcs_to_bigquery import (
 )
 from airflow.sdk import dag, task
 
+from airflow.providers.standard.operators.bash import BashOperator
+
 # Skema ini HARUS sama dengan tabel yang sudah dibuat di Console.
 SCHEMA_FIELDS = [
     {"name": "project", "type": "STRING", "mode": "REQUIRED"},
@@ -126,7 +128,17 @@ def wikitrends_daily():
         print(f"{target_date}: {baris} baris, semua artikel unik.")
         return baris
 
-    gcs_uri >> load_to_bigquery >> check_row_count()
+    dbt_build = BashOperator(
+        task_id="dbt_build",
+        bash_command=(
+            "/opt/airflow/dbt-venv/bin/python -m dbt.cli.main build "
+            "--project-dir /opt/airflow/dbt_wikitrends "
+            "--profiles-dir /opt/airflow/dbt_profiles "
+            "--log-path /opt/airflow/dbt_wikitrends/logs"
+        ),
+    )
+
+    gcs_uri >> load_to_bigquery >> check_row_count() >> dbt_build
 
 
 wikitrends_daily()

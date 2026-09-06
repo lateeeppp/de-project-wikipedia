@@ -1,0 +1,11 @@
+dbt_wikitrends:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: project2-507704
+      dataset: staging
+      threads: 4
+      keyfile: /opt/airflow/keys/google-creds.json
+      location: us-central1
