@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: raw
+    database: project2-507704
+    schema: raw
+    tables:
+      - name: top_pageviews
