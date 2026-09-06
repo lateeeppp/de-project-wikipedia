@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: mart_trending_articles
+    columns:
+      - name: article
+        data_tests:
+          - not_null
+      - name: pageview_date
+        data_tests:
+          - not_null

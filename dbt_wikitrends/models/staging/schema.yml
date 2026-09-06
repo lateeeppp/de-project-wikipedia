@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: stg_top_pageviews
+    columns:
+      - name: article
+        data_tests:
+          - not_null
+      - name: pageview_date
+        data_tests:
+          - not_null
