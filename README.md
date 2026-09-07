@@ -8,15 +8,7 @@ Artikel apa yang sedang melonjak tidak wajar di Wikipedia Indonesia hari ini dib
 
 ## Jawaban Atas Pertanyaan Bisnis
 
-Pipeline ini membantu menemukan artikel Wikipedia Indonesia yang mengalami lonjakan pembaca dibandingkan pola biasanya.
-
-Caranya, views artikel hari ini dibandingkan dengan rata-rata dan standar deviasi views pada periode sebelumnya. Artikel dengan `z_score > 2` dianggap sebagai kandidat trending. Namun, hasil tersebut tetap dilihat bersama jumlah `views`, `rank`, dan status `is_new_entrant` agar tidak hanya bergantung pada satu metrik.
-
-Dengan begitu, pipeline tidak sekadar menampilkan artikel yang paling banyak dibaca, tetapi juga artikel yang mengalami perubahan perhatian publik secara signifikan. Hasilnya dapat digunakan oleh tim editorial, content strategist, dan data analyst untuk menentukan topik yang perlu diperhatikan atau dianalisis lebih lanjut.
-
-## Arsitektur
-
-![Data Pipeline](./img/data-pipeline-image.png)
+Pipeline ini membantu menemukan artikel Wikipedia Indonesia yang mengalami lonjakan pembaca dibandingkan pola biasanya. Caranya, views artikel hari ini dibandingkan dengan rata-rata dan standar deviasi views pada periode sebelumnya. Artikel dengan `z_score > 2` dianggap sebagai kandidat trending. Namun, hasil tersebut tetap dilihat bersama jumlah `views`, `rank`, dan status `is_new_entrant` agar tidak hanya bergantung pada satu metrik Dengan begitu, pipeline tidak sekadar menampilkan artikel yang paling banyak dibaca, tetapi juga artikel yang mengalami perubahan perhatian publik secara signifikan.
 
 ## Nilai Bisnis
 
@@ -25,6 +17,10 @@ Pipeline ini mengubah data pageviews mentah menjadi sinyal tren yang dapat digun
 - Data analyst untuk menganalisis pola perhatian publik.
 - Tim editorial untuk menemukan topik yang sedang ramai.
 - Content strategist untuk menentukan topik yang perlu diperbarui.
+
+## Arsitektur
+
+![Data Pipeline](./img/data-pipeline-image.png)
 
 ## Data Model
 
